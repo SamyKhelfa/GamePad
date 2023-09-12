@@ -1,0 +1,54 @@
+.game-details {
+  color: white;
+  font-family: Open Sans, sans-serif;
+}
+
+.about {
+  color: grey; /* Couleur pour la partie "About" */
+  font-weight: bold;
+}
+
+.release-date {
+  color: grey; /* Couleur pour la partie "Released date" */
+  font-weight: bold;
+}
+
+.genres {
+  color: grey; /* Couleur pour la partie "Genre" */
+  font-weight: bold;
+}
+
+.platforms {
+  color: grey; /* Couleur pour la partie "Platform" */
+  font-weight: bold;
+}
+
+.developers {
+  color: grey; /* Couleur pour la partie "Developer" */
+  font-weight: bold;
+}
+
+.age {
+  color: grey; /* Couleur pour la partie "Age" */
+  font-weight: bold;
+}
+
+.publishers {
+  color: grey; /* Couleur pour la partie "Publisher" */
+  font-weight: bold;
+}
+
+.image {
+  width: 600px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.game-details h1 {
+  font-size: 40px;
+}
+
+.game-details__container {
+  margin-top: 20px;
+}
