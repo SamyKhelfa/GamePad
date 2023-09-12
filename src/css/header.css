@@ -1,0 +1,76 @@
+header {
+  display: flex;
+  border-bottom: 2px solid #ff4655 !important;
+  margin-bottom: 70px !important;
+}
+
+.logo-header {
+  width: 166px;
+  height: 40px;
+}
+
+ul {
+  margin-bottom: 30px !important;
+}
+
+li {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* header.css */
+.button-link {
+  /* Ajoutez ici les styles pour faire ressembler le lien à un bouton */
+  background-color: #ff4655; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  padding: 10px 20px; /* Rembourrage pour l'apparence du bouton */
+  border: none; /* Supprimez les bordures par défaut */
+  text-decoration: none; /* Supprimez le soulignement du texte */
+  border-radius: 5px; /* Ajoutez des coins arrondis */
+  cursor: pointer; /* Changez le curseur au survol */
+}
+
+.button-link:hover {
+  /* Styles au survol du bouton */
+  background-color: #ff4620; /* Couleur de fond au survol */
+  animation-duration: 0.3s; /* Durée de l'animation */
+}
+
+header {
+  color: #fff;
+  padding: 10px 0;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userbuttons {
+  align-items: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  text-align: center; /* Centrez les éléments horizontalement */
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
