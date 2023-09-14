@@ -48,6 +48,8 @@
 .game-details h1 {
   font-size: 40px;
   margin-bottom: 20px;
+  text-decoration: underline #ff4655;
+  font-weight: bold;
 }
 
 .game-details__container {
@@ -64,7 +66,14 @@
   margin-bottom: 20px;
 }
 
+.games-like {
+  font-weight: bold;
+  text-decoration: underline #ff4655;
+  font-size: 20px;
+}
+
 .games-like__container {
+  margin-top: -10px;
   margin-bottom: 30px;
   display: flex;
   flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
@@ -113,4 +122,22 @@
 .container {
   margin: 0 auto;
   width: 80%;
+}
+
+.loading-container {
+  position: fixed; /* Position absolue par rapport à la fenêtre */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fond semi-transparent pour l'arrière-plan du chargement */
+  z-index: 9999; /* Assurez-vous que le chargement est au-dessus de tout le reste */
 }

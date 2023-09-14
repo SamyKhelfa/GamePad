@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../css/game.css";
+import ReactLoading from "react-loading";
 
 const Game = () => {
   const [data1, setData1] = useState({});
@@ -45,8 +47,14 @@ const Game = () => {
     fetchData2();
   }, [API_KEY, id]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return isLoading1 || isLoading2 ? (
-    <span>Loading...</span>
+    <div className="loading-container">
+      <ReactLoading type={"spin"} color={"#ff4655"} height={100} width={100} />
+    </div>
   ) : (
     <div className="container">
       <div className="game-details">
@@ -95,14 +103,16 @@ const Game = () => {
         </p>
         <div className="games-like__container">
           {data2.results.map((game) => (
-            <div key={game.id} className="game-like">
-              <img
-                src={game.background_image}
-                alt={game.name}
-                className="games-like-img"
-              />
-              <p className="game-name-overlay">{game.name}</p>
-            </div>
+            <Link to={`/games/${game.id}`} key={game.id} onClick={scrollToTop}>
+              <div key={game.id} className="game-like">
+                <img
+                  src={game.background_image}
+                  alt={game.name}
+                  className="games-like-img"
+                />
+                <p className="game-name-overlay">{game.name}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

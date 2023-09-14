@@ -4,6 +4,7 @@ import logo from "../img/image.png";
 import "../css/home.css";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+import ReactLoading from "react-loading";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -34,7 +35,9 @@ const Home = () => {
   };
 
   return isLoading ? (
-    <span>Loading...</span>
+    <div className="loading-container">
+      <ReactLoading type={"spin"} color={"#ff4655"} height={100} width={100} />
+    </div>
   ) : (
     <div className="home">
       <div className="home__container">
