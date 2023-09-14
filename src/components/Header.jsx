@@ -13,18 +13,13 @@ const Header = () => (
             </Link>
           </div>
         </li>
-        <li>
-          <div className="userbuttons">
-            <Link to="/my-collection">My Collection</Link>
-          </div>
-        </li>
-        <li>
-          <div className="userbuttons">
-            <Link to="/login" className="button-link">
-              Login
-            </Link>
-          </div>
-        </li>
+        <div className="userbuttons">
+          <Link to="/my-collection">My Collection</Link>
+
+          <Link to="/login" className="button-link">
+            Login
+          </Link>
+        </div>
       </ul>
     </nav>
   </header>

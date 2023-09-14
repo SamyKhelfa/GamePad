@@ -47,8 +47,70 @@
 
 .game-details h1 {
   font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .game-details__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-direction: column;
+}
+
+.game-details__container p {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.games-like__container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+  gap: 10px;
+  overflow: scroll;
+  overflow-y: hidden;
+  margin-bottom: 60px;
+  height: 350px;
+  align-items: flex-end; /* Aligne les éléments en bas */
+  padding-bottom: 20px; /* Ajoute un espace à droite pour la scrollbar */
+}
+
+.games-like-img {
   margin-top: 20px;
+  width: 218px;
+  height: 282px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.game-like {
+  position: relative;
+}
+
+.game-name-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 4px 8px;
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+  border-radius: 0 0 15px 15px;
+}
+.game-details span {
+  margin-right: 10px;
+}
+
+.games-like__container :hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
 }

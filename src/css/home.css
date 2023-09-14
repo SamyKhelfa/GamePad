@@ -77,6 +77,9 @@ a {
   text-decoration: none;
 }
 
+.pagination-container a {
+  margin-bottom: 40px;
+}
 .pagination-container :nth-child(1) {
   margin-right: 10px;
   display: flex;
@@ -96,4 +99,34 @@ a {
 .pagination a:active,
 .pagination a:focus {
   outline: none; /* Supprime le contour lorsque le lien est actif ou au focus */
+}
+
+.searchbar {
+  margin: 20px 0;
+  position: relative;
+  width: 400px;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  position: absolute; /* Positionnement absolu par rapport à la barre de recherche */
+  right: -8px; /* Espace à droite */
+  top: 50%; /* Centrez verticalement l'icône */
+  transform: translateY(-50%); /* Centrez verticalement l'icône */
+  font-size: 24px; /* Taille de l'icône */
+  cursor: pointer; /* Curseur pointer au survol */
 }

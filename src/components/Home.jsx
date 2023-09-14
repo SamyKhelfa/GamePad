@@ -43,6 +43,7 @@ const Home = () => {
         </div>
         <div className="searchbar">
           <input type="text" placeholder="Search for a game..." />
+          <span className="search-icon">&#128269;</span>
         </div>
         <div className="games">
           {data.results.map((game) => (

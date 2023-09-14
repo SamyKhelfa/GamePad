@@ -1,20 +1,40 @@
+/* header.css */
 header {
   display: flex;
+  justify-content: space-between; /* Pour espacer les éléments horizontalement */
+  align-items: center; /* Pour centrer verticalement les éléments */
   border-bottom: 2px solid #ff4655 !important;
   margin-bottom: 70px !important;
+  padding: 0 150px; /* Marge de 150px de chaque côté */
+  height: 80px;
 }
 
 .logo-header {
+  margin-left: 185px;
   width: 166px;
   height: 40px;
+  margin-top: 18px;
+}
+
+.userbuttons {
+  margin-top: 34px;
+  margin-left: 935px;
+}
+
+.button-link {
+  margin-left: 20px;
 }
 
 ul {
-  margin-bottom: 30px !important;
+  margin: 0; /* Supprimez la marge par défaut des listes */
+  padding: 0; /* Supprimez le rembourrage par défaut des listes */
+  list-style-type: none; /* Supprimez les puces de liste */
+  display: flex; /* Pour afficher les éléments de la liste en ligne */
 }
 
 li {
   display: flex;
+  align-items: center; /* Centrez les éléments verticalement */
 }
 
 a {
@@ -22,55 +42,17 @@ a {
   color: white;
 }
 
-/* header.css */
 .button-link {
-  /* Ajoutez ici les styles pour faire ressembler le lien à un bouton */
-  background-color: #ff4655; /* Couleur de fond du bouton */
-  color: #fff; /* Couleur du texte du bouton */
-  padding: 10px 20px; /* Rembourrage pour l'apparence du bouton */
-  border: none; /* Supprimez les bordures par défaut */
-  text-decoration: none; /* Supprimez le soulignement du texte */
-  border-radius: 5px; /* Ajoutez des coins arrondis */
-  cursor: pointer; /* Changez le curseur au survol */
+  background-color: #ff4655;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .button-link:hover {
-  /* Styles au survol du bouton */
-  background-color: #ff4620; /* Couleur de fond au survol */
-  animation-duration: 0.3s; /* Durée de l'animation */
-}
-
-header {
-  color: #fff;
-  padding: 10px 0;
-}
-
-.header-buttons {
-  display: flex;
-  justify-content: space-around;
-}
-
-.userbuttons {
-  align-items: right;
-  display: flex;
-  justify-content: flex-end;
-}
-
-nav {
-  text-align: center; /* Centrez les éléments horizontalement */
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav ul li:last-child {
-  margin-right: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
+  background-color: #ff4620;
+  animation-duration: 0.3s;
 }
