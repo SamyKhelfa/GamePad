@@ -66,8 +66,8 @@ const Home = () => {
         </div>
         <div className="pagination-container">
           <ReactPaginate
-            previousLabel={"Previous"}
-            nextLabel={"Next"}
+            previousLabel={"<"}
+            nextLabel={">"}
             breakLabel={"..."}
             pageCount={Math.ceil(data.count / page_size)}
             marginPagesDisplayed={1}
