@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../css/signup.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -22,23 +23,28 @@ const Signup = () => {
     setPseudo(value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
-    console.log(email, password, pseudo);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:3000/signup", {
+        email,
+        username: pseudo,
+        password,
+      });
+      // Traitez la réponse ici (par exemple, affichez un message de succès)
+      console.log("Inscription réussie :", response.data);
+    } catch (error) {
+      // Gérez les erreurs ici (par exemple, affichez un message d'erreur)
+      console.log(error);
+    }
   };
 
   return (
     <div>
       <div className="signup_container">
         <h1>Signup</h1>
+
         <form onSubmit={handleSubmit}>
-          <input
-            placeholder="Username"
-            type="text"
-            name="pseudo"
-            value={pseudo}
-            onChange={handlePseudoChange}
-          />
           <input
             placeholder="Email"
             type="text"
@@ -47,14 +53,15 @@ const Signup = () => {
             onChange={handleEmailChange}
           />
           <input
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
+            placeholder="Username"
+            type="text"
+            name="pseudo"
+            value={pseudo}
+            onChange={handlePseudoChange}
           />
+
           <input
-            placeholder="Confirm Password"
+            placeholder="Password"
             type="password"
             name="password"
             value={password}
@@ -65,7 +72,7 @@ const Signup = () => {
           <input className="submit" type="submit" value="Signup" />
         </form>
         <Link to="/login">
-          <p class="hover-color-change">Already have an account ?</p>
+          <p className="hover-color-change">Already have an account ?</p>
         </Link>
       </div>
     </div>
