@@ -141,3 +141,33 @@
   ); /* Fond semi-transparent pour l'arrière-plan du chargement */
   z-index: 9999; /* Assurez-vous que le chargement est au-dessus de tout le reste */
 }
+
+.games-screenshot {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  overflow: scroll;
+  overflow-y: hidden;
+  height: 240px;
+}
+
+.screenshot {
+  border-radius: 15px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.screenshots-title {
+  margin-top: 30px;
+  color: grey; /* Couleur pour la partie "Publisher" */
+  font-weight: bold;
+}
+
+.games-screenshot :hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  cursor: pointer;
+}

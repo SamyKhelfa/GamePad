@@ -8,8 +8,10 @@ import ReactLoading from "react-loading";
 const Game = () => {
   const [data1, setData1] = useState({});
   const [data2, setData2] = useState({});
+  const [data3, setData3] = useState({});
   const [isLoading1, setIsLoading1] = useState(true);
   const [isLoading2, setIsLoading2] = useState(true);
+  const [isLoading3, setIsLoading3] = useState(true);
   const API_KEY = "7c556f0fa4154bad8da30ff7dfa39d11";
 
   const { id } = useParams();
@@ -43,15 +45,30 @@ const Game = () => {
       }
     };
 
+    const fetchData3 = async () => {
+      try {
+        const response3 = await axios.get(
+          `https://api.rawg.io/api/games/${id}/screenshots?key=${API_KEY}`
+        );
+
+        console.log(response3.data);
+        setData3(response3.data);
+        setIsLoading3(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+
     fetchData1();
     fetchData2();
+    fetchData3();
   }, [API_KEY, id]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return isLoading1 || isLoading2 ? (
+  return isLoading1 || isLoading2 || isLoading3 ? (
     <div className="loading-container">
       <ReactLoading type={"spin"} color={"#ff4655"} height={100} width={100} />
     </div>
@@ -60,6 +77,17 @@ const Game = () => {
       <div className="game-details">
         <h1>{data1.name}</h1>
         <img src={data1.background_image} alt={data1.name} className="image" />
+        <p className="screenshots-title">Screenshots :</p>
+        <div className="games-screenshot">
+          {data3.results.map((screenshot) => (
+            <img
+              src={screenshot.image}
+              alt={screenshot.id}
+              key={screenshot.id}
+              className="screenshot"
+            />
+          ))}
+        </div>
         <div className="game-details__container">
           <p>
             <span className="release-date">Released date:</span>{" "}
