@@ -48,6 +48,7 @@ const Signup = () => {
 
       alert(`Signup successful !! Welcome ${pseudo} !!`);
       navigate("/");
+      window.location.reload();
       // Rediriger vers la page d'accueil
     } catch (error) {
       // Gérez les erreurs ici (par exemple, affichez un message d'erreur)
