@@ -1,11 +1,13 @@
 .game-details {
   color: white;
   font-family: Open Sans, sans-serif;
+  flex-direction: row;
 }
 
 .about {
   color: grey; /* Couleur pour la partie "About" */
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .release-date {
@@ -57,13 +59,13 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   margin-top: 40px;
-  margin-bottom: 40px;
   flex-direction: column;
 }
 
 .game-details__container p {
   display: flex;
   margin-bottom: 20px;
+  justify-content: right;
 }
 
 .games-like {
@@ -170,4 +172,55 @@
   transform: scale(1.03);
   transition: 0.5s;
   cursor: pointer;
+}
+
+.description {
+  line-height: normal;
+}
+
+.screenshots-container {
+  margin-bottom: 60px;
+}
+
+.details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.game-details__container {
+  flex: 1;
+}
+
+.image {
+  width: 100%;
+  max-width: 400px; /* Ajustez cette valeur selon vos préférences */
+  height: auto;
+}
+
+.description {
+  line-height: normal;
+}
+
+.screenshots-container {
+  margin-bottom: 60px;
+}
+
+.about-container {
+  margin-top: 20px; /* Ajoute une marge en haut de la section "About" */
+  margin-bottom: 40px; /* Ajoute une marge en bas de la section "About" */
+}
+
+.details-right {
+  margin-right: 30px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
 }

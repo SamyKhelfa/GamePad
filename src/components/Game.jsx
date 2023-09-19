@@ -76,56 +76,75 @@ const Game = () => {
     <div className="container">
       <div className="game-details">
         <h1>{data1.name}</h1>
-        <img src={data1.background_image} alt={data1.name} className="image" />
-        <p className="screenshots-title">Screenshots :</p>
-        <div className="games-screenshot">
-          {data3.results.map((screenshot) => (
+        <div className="details-container">
+          <div className="image-container">
             <img
-              src={screenshot.image}
-              alt={screenshot.id}
-              key={screenshot.id}
-              className="screenshot"
+              src={data1.background_image}
+              alt={data1.name}
+              className="image"
             />
-          ))}
+          </div>
+          <div className="details-right">
+            <div className="details-column">
+              <p>
+                <span className="release-date">Released date:</span>{" "}
+                {data1.released}
+              </p>
+              <p>
+                <span className="platforms">Platforms:</span>
+                {data1.platforms.map((platform) => (
+                  <span key={platform.platform.id}>
+                    {platform.platform.name}&ensp;
+                  </span>
+                ))}
+              </p>
+              <p>
+                <span className="genres">Genres:</span>
+                {data1.genres.map((genre) => (
+                  <span key={genre.id}>{genre.name}&ensp;</span>
+                ))}
+              </p>
+            </div>
+            <div className="details-column">
+              <p>
+                <span className="developers">Developers:</span>
+                {data1.developers.map((developer) => (
+                  <span key={developer.id}>{developer.name}&ensp;</span>
+                ))}
+              </p>
+              <p>
+                <span className="publishers">Publishers:</span>
+                {data1.publishers.map((publisher) => (
+                  <span key={publisher.id}>{publisher.name}&ensp;</span>
+                ))}
+              </p>
+              <p>
+                <span className="age">Age rating:</span>{" "}
+                {data1.esrb_rating ? data1.esrb_rating.name : "Not rated"}
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="game-details__container">
-          <p>
-            <span className="release-date">Released date:</span>{" "}
-            {data1.released}
-          </p>
-          <p>
-            <span className="platforms">Platforms:</span>
-            {data1.platforms.map((platform) => (
-              <p key={platform.platform.id}>{platform.platform.name}&ensp;</p>
+        <div className="screenshots-container">
+          <p className="screenshots-title">Screenshots :</p>
+          <div className="games-screenshot">
+            {data3.results.map((screenshot) => (
+              <img
+                src={screenshot.image}
+                alt={screenshot.id}
+                key={screenshot.id}
+                className="screenshot"
+              />
             ))}
-          </p>
+          </div>
+        </div>
+        <div className="about-container">
           <p>
-            <span className="genres">Genres:</span>
-            {data1.genres.map((genre) => (
-              <p key={genre.id}>{genre.name}&ensp;</p>
-            ))}
-          </p>
-          <p>
-            <span className="developers">Developers:</span>
-            {data1.developers.map((developer) => (
-              <p key={developer.id}>{developer.name}&ensp;</p>
-            ))}
-          </p>
-          <p>
-            <span className="publishers">Publishers:</span>
-            {data1.publishers.map((publisher) => (
-              <p key={publisher.id}>{publisher.name}</p>
-            ))}
-          </p>
-          <p>
-            <span className="age">Age rating:</span>
-            {data1.esrb_rating ? data1.esrb_rating.name : "Not rated"}
-          </p>
-          <p>
-            <span className="about">About:</span> {data1.description_raw}
+            <span className="about">About:</span>
+            <br />
+            <p className="description">{data1.description_raw}</p>
           </p>
         </div>
-
         <p>
           <span className="games-like">Games like {data1.name}</span>
         </p>

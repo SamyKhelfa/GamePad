@@ -1,12 +1,14 @@
 import { useState } from "react";
-import "../css/signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../css/signup.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pseudo, setPseudo] = useState("");
+  const [file, setFile] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -23,6 +25,11 @@ const Signup = () => {
     setPseudo(value);
   };
 
+  const handleFileChange = (event) => {
+    const value = event.target.value;
+    setFile(value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -30,9 +37,18 @@ const Signup = () => {
         email,
         username: pseudo,
         password,
+        file,
       });
+
       // Traitez la réponse ici (par exemple, affichez un message de succès)
       console.log("Inscription réussie :", response.data);
+
+      // Enregistrez le token dans le stockage local
+      localStorage.setItem("token", response.data.token);
+
+      alert(`Signup successful !! Welcome ${pseudo} !!`);
+      navigate("/");
+      // Rediriger vers la page d'accueil
     } catch (error) {
       // Gérez les erreurs ici (par exemple, affichez un message d'erreur)
       console.log(error);
@@ -42,7 +58,7 @@ const Signup = () => {
   return (
     <div>
       <div className="signup_container">
-        <h1>Signup</h1>
+        <h1>Sign up</h1>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -67,7 +83,13 @@ const Signup = () => {
             value={password}
             onChange={handlePasswordChange}
           />
-          <input placeholder="Add a photo" type="file" name="file" />
+          <input
+            placeholder="Add a photo"
+            type="file"
+            name="file"
+            value={file}
+            onChange={handleFileChange}
+          />
 
           <input className="submit" type="submit" value="Signup" />
         </form>

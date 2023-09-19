@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../img/image.png";
 import "../css/header.css";
+const token = localStorage.getItem("token");
 
 const Header = () => (
   <header>
@@ -15,10 +16,15 @@ const Header = () => (
         </li>
         <div className="userbuttons">
           <Link to="/my-collection">My Collection</Link>
-
-          <Link to="/login" className="button-link">
-            Login
-          </Link>
+          {token ? (
+            <Link to="/logout" className="button-link">
+              Logout
+            </Link>
+          ) : (
+            <Link to="/login" className="button-link">
+              Login
+            </Link>
+          )}
         </div>
       </ul>
     </nav>
