@@ -7,6 +7,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -35,6 +36,7 @@ const Login = () => {
       window.location.reload();
     } catch (error) {
       console.log(error);
+      setErrorMessage("email or password incorrect");
     }
   };
 
@@ -59,6 +61,7 @@ const Login = () => {
           />
           <input className="submit" type="submit" value="Login" />
         </form>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <Link to="/signup">
           <p className="hover-color-change">{"Don't have an account yet ?"}</p>
         </Link>
