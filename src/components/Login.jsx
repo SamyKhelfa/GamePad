@@ -27,16 +27,13 @@ const Login = () => {
         password,
       });
 
-      // Traitez la réponse ici pour gérer l'authentification réussie
       console.log("Authentification réussie :", response.data);
 
-      // Enregistrez le token dans le stockage local
       localStorage.setItem("token", response.data.token);
 
-      // Redirigez l'utilisateur vers la page d'accueil ou une autre page protégée
       navigate("/");
+      window.location.reload();
     } catch (error) {
-      // Gérez les erreurs ici (par exemple, affichez un message d'erreur)
       console.log(error);
     }
   };

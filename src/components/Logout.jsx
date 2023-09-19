@@ -9,7 +9,8 @@ const Logout = () => {
     localStorage.removeItem("token");
 
     // Redirigez l'utilisateur vers la page de connexion ou une autre page appropriée
-    navigate("/login"); // Remplacez "/login" par l'URL de la page de connexion
+    navigate("/"); // Remplacez "/login" par l'URL de la page de connexion
+    window.location.reload();
   }, [navigate]);
 
   return (
