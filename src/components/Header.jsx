@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../img/image.png";
 import "../css/header.css";
 const token = localStorage.getItem("token");
+const user = localStorage.getItem("user"); // Ajoutez cette ligne pour récupérer le nom de l'utilisateur
 
 const Header = () => (
   <header>
@@ -14,7 +15,9 @@ const Header = () => (
             </Link>
           </div>
         </li>
+
         <div className="userbuttons">
+          {token ? <Link to="/account">{user}</Link> : null}
           <Link to="/my-collection">My Collection</Link>
           {token ? (
             <Link to="/logout" className="button-link">

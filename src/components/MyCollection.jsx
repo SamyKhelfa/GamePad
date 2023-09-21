@@ -1,11 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import "../css/mycollection.css";
+import axios from "axios";
+
+const favorites = localStorage.getItem("favorites");
 
 const token = localStorage.getItem("token");
 
 const MyCollection = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       {token ? (
@@ -13,7 +14,7 @@ const MyCollection = () => {
           <h1>My Collection</h1>
         </div>
       ) : (
-        navigate("/login")
+        <Navigate to="/login" />
       )}
     </>
   );

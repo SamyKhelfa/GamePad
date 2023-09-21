@@ -151,3 +151,31 @@ input[type="text"]::placeholder {
   ); /* Fond semi-transparent pour l'arrière-plan du chargement */
   z-index: 9999; /* Assurez-vous que le chargement est au-dessus de tout le reste */
 }
+
+.pagination-container .active {
+  font-weight: bold;
+}
+
+.add-to-collection {
+  justify-content: center;
+  right: 0;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ff4655;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.details-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+  width: 900px;
+}
+
+.details-column {
+  gap: 20px;
+}

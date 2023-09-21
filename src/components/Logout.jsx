@@ -5,11 +5,9 @@ const Logout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Supprimez le token du stockage local lors du chargement de la page de déconnexion
     localStorage.removeItem("token");
 
-    // Redirigez l'utilisateur vers la page de connexion ou une autre page appropriée
-    navigate("/"); // Remplacez "/login" par l'URL de la page de connexion
+    navigate("/");
     window.location.reload();
   }, [navigate]);
 

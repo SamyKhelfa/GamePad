@@ -31,12 +31,13 @@ const Login = () => {
       console.log("Authentification réussie :", response.data);
 
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", response.data.username);
 
       navigate("/");
       window.location.reload();
     } catch (error) {
       console.log(error);
-      setErrorMessage("email or password incorrect");
+      setErrorMessage("Email or password incorrect");
     }
   };
 

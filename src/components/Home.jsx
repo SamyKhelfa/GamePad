@@ -30,8 +30,7 @@ const Home = () => {
   }, [page, page_size, API_KEY]);
 
   const handlePageChange = (selectedPage) => {
-    // ReactPaginate provides the selected page as an argument
-    setPage(selectedPage.selected + 1); // Add 1 because pages are 1-based, not 0-based
+    setPage(selectedPage.selected + 1);
   };
 
   return isLoading ? (
