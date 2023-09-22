@@ -16,6 +16,7 @@ const Game = () => {
   const [favorites] = useState([]);
   const [videoUrl, setVideoUrl] = useState("");
   const API_KEY = "7c556f0fa4154bad8da30ff7dfa39d11";
+  const token = localStorage.getItem("token");
 
   const { id } = useParams();
 

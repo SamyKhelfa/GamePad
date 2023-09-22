@@ -56,3 +56,10 @@ a {
   background-color: #ff4620;
   animation-duration: 0.3s;
 }
+
+.user {
+  margin-right: 20px;
+  color: #ff4655;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Logout from "./components/Logout";
 import MyCollection from "./components/MyCollection";
+import Account from "./components/Account";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/my-collection" element={<MyCollection />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
   );

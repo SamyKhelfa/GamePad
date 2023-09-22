@@ -128,7 +128,7 @@ input[type="text"]::placeholder {
 .search-icon {
   position: absolute; /* Positionnement absolu par rapport à la barre de recherche */
   right: -8px; /* Espace à droite */
-  top: 50%; /* Centrez verticalement l'icône */
+  top: 43%; /* Centrez verticalement l'icône */
   transform: translateY(-50%); /* Centrez verticalement l'icône */
   font-size: 24px; /* Taille de l'icône */
   cursor: pointer; /* Curseur pointer au survol */
@@ -176,6 +176,6 @@ input[type="text"]::placeholder {
   width: 900px;
 }
 
-.details-column {
+.details-column a {
   gap: 20px;
 }

@@ -12,6 +12,7 @@ const Home = () => {
   const page_size = 45;
   const API_KEY = "7c556f0fa4154bad8da30ff7dfa39d11";
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +30,27 @@ const Home = () => {
     fetchData();
   }, [page, page_size, API_KEY]);
 
+  const handleSearch = (event) => {
+    const value = event.target.value;
+    setSearch(value);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.rawg.io/api/games?key=${API_KEY}&page_size=${page_size}&page=${page}&search=${search}`
+        );
+        console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+    fetchData();
+  }, [page, page_size, API_KEY, search]);
+
   const handlePageChange = (selectedPage) => {
     setPage(selectedPage.selected + 1);
   };
@@ -44,7 +66,12 @@ const Home = () => {
           <img src={logo} alt="Logo" className="image-home" />
         </div>
         <div className="searchbar">
-          <input type="text" placeholder="Search for a game..." />
+          <input
+            type="text"
+            placeholder="Search for a game..."
+            onChange={handleSearch}
+            value={search}
+          />
           <span className="search-icon">&#128269;</span>
         </div>
         <div className="games">
