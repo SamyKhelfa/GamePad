@@ -215,7 +215,6 @@ const Game = () => {
           {videoUrl && (
             <video
               className="custom-video"
-              autoPlay
               controls
               width="640"
               height="360"

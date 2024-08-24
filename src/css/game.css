@@ -4,40 +4,13 @@
   flex-direction: row;
 }
 
+.release-date, .genres, .platforms, .developers, .age, .publishers, .about {
+  color: grey; 
+  font-weight: bold;
+}
+
 .about {
-  color: grey; /* Couleur pour la partie "About" */
-  font-weight: bold;
   margin-bottom: 20px;
-}
-
-.release-date {
-  color: grey; /* Couleur pour la partie "Released date" */
-  font-weight: bold;
-}
-
-.genres {
-  color: grey; /* Couleur pour la partie "Genre" */
-  font-weight: bold;
-}
-
-.platforms {
-  color: grey; /* Couleur pour la partie "Platform" */
-  font-weight: bold;
-}
-
-.developers {
-  color: grey; /* Couleur pour la partie "Developer" */
-  font-weight: bold;
-}
-
-.age {
-  color: grey; /* Couleur pour la partie "Age" */
-  font-weight: bold;
-}
-
-.publishers {
-  color: grey; /* Couleur pour la partie "Publisher" */
-  font-weight: bold;
 }
 
 .image {
@@ -78,14 +51,14 @@
   margin-top: -10px;
   margin-bottom: 30px;
   display: flex;
-  flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+  flex-wrap: nowrap; 
   gap: 10px;
   overflow: scroll;
   overflow-y: hidden;
   margin-bottom: 60px;
   height: 350px;
-  align-items: flex-end; /* Aligne les éléments en bas */
-  padding-bottom: 20px; /* Ajoute un espace à droite pour la scrollbar */
+  align-items: flex-end; 
+  padding-bottom: 20px; 
 }
 
 .games-like-img {
@@ -122,26 +95,25 @@
 }
 
 .container {
-  margin: 0 auto;
-  width: 80%;
+  padding: var(--space-x-page)!important; 
 }
 
 .loading-container {
-  position: fixed; /* Position absolue par rapport à la fenêtre */
+  position: fixed; 
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
+  justify-content: center; 
+  align-items: center; 
   background-color: rgba(
     0,
     0,
     0,
     0.5
-  ); /* Fond semi-transparent pour l'arrière-plan du chargement */
-  z-index: 9999; /* Assurez-vous que le chargement est au-dessus de tout le reste */
+  ); 
+  z-index: 9999; 
 }
 
 .games-screenshot {
@@ -164,7 +136,7 @@
 
 .screenshots-title {
   margin-top: 30px;
-  color: grey; /* Couleur pour la partie "Publisher" */
+  color: grey; 
   font-weight: bold;
 }
 
@@ -199,7 +171,7 @@
 
 .image {
   width: 100%;
-  max-width: 400px; /* Ajustez cette valeur selon vos préférences */
+  max-width: 400px; 
   height: auto;
 }
 
@@ -212,8 +184,8 @@
 }
 
 .about-container {
-  margin-top: 20px; /* Ajoute une marge en haut de la section "About" */
-  margin-bottom: 40px; /* Ajoute une marge en bas de la section "About" */
+  margin-top: 20px; 
+  margin-bottom: 40px; 
 }
 
 .details-right {
@@ -231,6 +203,7 @@ video {
 
 .custom-video {
   border: 1px solid #ccc;
+  width: 100%;
   margin-top: 20px;
   border-radius: 15px;
   margin-bottom: 20px;

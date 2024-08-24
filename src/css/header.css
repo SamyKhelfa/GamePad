@@ -5,41 +5,36 @@ header {
   align-items: center; /* Pour centrer verticalement les éléments */
   border-bottom: 2px solid #ff4655 !important;
   margin-bottom: 70px !important;
-  padding: 0 150px; /* Marge de 150px de chaque côté */
+  padding: var(--space-x-page)!important; 
   height: 80px;
 }
 
 .logo-header {
-  margin-left: 185px;
   width: 166px;
   height: 40px;
-  margin-top: 18px;
 }
 
 .userbuttons {
-  margin-top: 34px;
-  margin-left: 1185px;
+  gap: 8px;
 }
 
-.button-link {
-  margin-left: 20px;
+.nav {
+  height: 100%;
 }
 
-ul {
+.nav-list {
   margin: 0; /* Supprimez la marge par défaut des listes */
   padding: 0; /* Supprimez le rembourrage par défaut des listes */
   list-style-type: none; /* Supprimez les puces de liste */
+  height: 100%;
   display: flex; /* Pour afficher les éléments de la liste en ligne */
+  align-items: center;
+  justify-content: space-between;
 }
 
-li {
+.nav-list li {
   display: flex;
   align-items: center; /* Centrez les éléments verticalement */
-}
-
-a {
-  text-decoration: none;
-  color: white;
 }
 
 .button-link {

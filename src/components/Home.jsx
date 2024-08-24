@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import logo from "../img/image.png";
 import "../css/home.css";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import ReactLoading from "react-loading";
+import lodash from 'lodash';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -35,36 +36,49 @@ const Home = () => {
     setSearch(value);
   };
 
+  const fetchData = async (page, page_size, API_KEY, searchTerm) => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(
+        `https://api.rawg.io/api/games?key=${API_KEY}&page_size=${page_size}&page=${page}&search=${searchTerm}`
+      );
+      console.log(response.data);
+      setData(response.data);
+    } catch (error) {
+      console.error(error.response);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const debouncedSearch = useCallback(
+    lodash.debounce((page, page_size, API_KEY, searchTerm) => {
+      fetchData(page, page_size, API_KEY, searchTerm);
+    }, 1000),
+    []
+  );
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.rawg.io/api/games?key=${API_KEY}&page_size=${page_size}&page=${page}&search=${search}`
-        );
-        console.log(response.data);
-        setData(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.response);
-      }
-    };
-    fetchData();
-  }, [page, page_size, API_KEY, search]);
+    debouncedSearch(page, page_size, API_KEY, search);
+  }, [page, page_size, API_KEY, search, debouncedSearch]);
+  
 
   const handlePageChange = (selectedPage) => {
     setPage(selectedPage.selected + 1);
   };
 
-  return isLoading ? (
-    <div className="loading-container">
-      <ReactLoading type={"spin"} color={"#ff4655"} height={100} width={100} />
-    </div>
-  ) : (
+  if(isLoading) {
+    return (
+      <div className="loading-container">
+        <ReactLoading type={"spin"} color={"#ff4655"} height={100} width={100} />
+      </div>
+    )
+  }
+
+  return (
     <div className="home">
       <div className="home__container">
-        <div className="home__container__logo">
-          <img src={logo} alt="Logo" className="image-home" />
-        </div>
+        <img src={logo} alt="Logo" className="image-home" />
         <div className="searchbar">
           <input
             type="text"

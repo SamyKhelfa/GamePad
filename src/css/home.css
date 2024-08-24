@@ -1,5 +1,11 @@
+.home {
+  padding: var(--space-x-page)!important; 
+}
+
 .image-home {
-  width: 480px;
+  width: 100%;
+  object-fit: contain;
+  max-width: 480px;
   height: 120px;
 }
 
@@ -25,7 +31,6 @@
   gap: 20px;
   margin-left: 1px;
   margin-right: 10px;
-  width: 1650px;
 }
 
 h2 {
@@ -107,12 +112,12 @@ a {
 .searchbar {
   margin: 20px 0;
   position: relative;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 
 input[type="text"] {
   width: 100%;
-  max-width: 400px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -127,7 +132,7 @@ input[type="text"]::placeholder {
 
 .search-icon {
   position: absolute; /* Positionnement absolu par rapport à la barre de recherche */
-  right: -8px; /* Espace à droite */
+  right: 12px; /* Espace à droite */
   top: 43%; /* Centrez verticalement l'icône */
   transform: translateY(-50%); /* Centrez verticalement l'icône */
   font-size: 24px; /* Taille de l'icône */

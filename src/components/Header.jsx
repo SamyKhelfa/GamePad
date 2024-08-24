@@ -6,22 +6,20 @@ const user = localStorage.getItem("user");
 
 const Header = () => (
   <header>
-    <nav>
-      <ul>
+    <nav className="nav">
+      <ul className="nav-list">
         <li>
-          <div className="header-buttons">
             <Link to="/">
               <img src={logo} alt="Logo" className="logo-header" />
             </Link>
-          </div>
         </li>
 
-        <div className="userbuttons">
-          {token ? (
+        <li className="userbuttons">
+          {token && (
             <Link className="user" to="/account">
               {user}
             </Link>
-          ) : null}
+          )}
           <Link to="/my-collection">My Collection</Link>
           {token ? (
             <Link to="/logout" className="button-link">
@@ -32,7 +30,7 @@ const Header = () => (
               Login
             </Link>
           )}
-        </div>
+        </li>
       </ul>
     </nav>
   </header>

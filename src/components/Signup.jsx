@@ -88,14 +88,14 @@ const Signup = () => {
             placeholder="Add a photo"
             type="file"
             name="file"
+            className="input-file"
             value={file}
             onChange={handleFileChange}
           />
-
           <input className="submit" type="submit" value="Signup" />
         </form>
         <Link to="/login">
-          <p className="hover-color-change">Already have an account ?</p>
+          <p className="signup-text">Already have an account ?</p>
         </Link>
       </div>
     </div>

@@ -64,7 +64,7 @@ const Login = () => {
         </form>
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <Link to="/signup">
-          <p className="hover-color-change">{"Don't have an account yet ?"}</p>
+          <p className="login-text">{"Don't have an account yet ?"}</p>
         </Link>
       </div>
     </div>
